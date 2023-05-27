@@ -42,7 +42,7 @@ export default function GiveForm({ lucid, showToaster }: ContractActionProps) {
       </FormControl>
       <LoadingButton
         variant="contained"
-        disabled={amount != BigInt(0)}
+        disabled={amount == BigInt(0)}
         loading={isLoading}
         onClick={handleSubmit}
       >

@@ -569,7 +569,7 @@ First I'll cover some fundamental React concepts, then provide a guided walkthro
   </FormControl>
   <LoadingButton
     variant="contained"
-    disabled={amount != BigInt(0)}
+    disabled={amount == BigInt(0)}
     loading={isLoading}
     onClick={handleSubmit}
   >
@@ -579,6 +579,14 @@ First I'll cover some fundamental React concepts, then provide a guided walkthro
 
 8. ### **Complete `Contract` component**
   - Open `react-ts-tutorial/demo/components/Contract.tsx`
+  - Add the following import statements:
+
+    ```tsx
+    import { useCardano } from "use-cardano"
+    import ClaimButton from "./ClaimButton"
+    import GiveForm from "./GiveForm"
+    ```
+    
   - Inside the `Contract` function, add the following call to the `useCardano` hook:
 
     ```tsx
