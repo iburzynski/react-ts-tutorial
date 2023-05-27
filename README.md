@@ -23,20 +23,22 @@ First I'll cover some fundamental React concepts, then provide a guided walkthro
 - Read-only data
 
 ### **Hooks**
-- Functions to manage and reuse stateful logic in components
+- Functions to manage and reuse stateful logic and effects inside components
+- Prefixed with `use` by convention
 - Commonly used hooks: 
     - `useState`: manage state
     - `useEffect`: perform side effects (data fetching, subscription, manual manipulation of DOM)
     - `useContext`: share data across components without passing props, via a surrounding context
     - `useMemo`: cache expensive computations
     - `useCallback`: memoize a callback function
+- Can define our own custom hooks
 
 ### **State**
 - Allows components to manage and update internal data
 - State data is passed to child components via props
 - When updated, React automatically re-renders the component and any children that depend on the state
 - Initialized by calling `useState` hook with initial value
-- Returns a two-element array containing:
+- Returns a two-element array (tuple) containing:
     1. A reference to the state's value in memory (read-only variable, never modified directly)
     2. A "setter" function to modify the state value
 
@@ -49,7 +51,7 @@ First I'll cover some fundamental React concepts, then provide a guided walkthro
 - Overuse may cause reduced: 
   - **performance:** updating context can trigger unnecessary re-renders of all consuming components
   - **reusability:** components become tightly coupled with the context they implicitly depend on
-  - **readability:** introduces indirection in data flow, as source of data may not be apparent when looking at a consuming component
+  - **readability:** introduces indirection in data flow, so source of data may not be apparent when looking at a consuming component
   - **scalability:** context increases complexity and makes code harder to scale and debug
 
 
